@@ -1,0 +1,311 @@
+/* style.css - Updated with EXACT grid filenames */
+
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0; /* Fallback */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+    min-height: 100vh;
+    color: #333;
+}
+
+#game-container {
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 800px;
+    max-width: 95%;
+    background-color: #fff; /* Fallback */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: background-image 1s ease;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+#stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#stats span {
+    background-color: #e9e9e9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#city-area {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#level-description {
+    font-style: italic;
+    color: #555;
+    margin-top: 5px;
+    min-height: 1.2em;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.city-visual {
+    height: 250px; /* !! ADJUST HEIGHT AS NEEDED !! */
+    border: 1px dashed #ccc;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: #d3d3d3; /* Fallback */
+    transition: background-image 1s ease;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: bottom center;
+}
+
+/* Base styles for image elements */
+.factory, .scenery {
+    position: absolute;
+    bottom: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    transition: all 0.8s ease-in-out, background-image 0.8s ease-in-out;
+    transform-origin: bottom center;
+    /* Default dimensions - ADJUST PER IMAGE BELOW */
+    width: 80px;
+    height: 80px;
+    text-indent: -9999px;
+    color: transparent;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.factory {
+     cursor: pointer;
+     user-select: none;
+     z-index: 2;
+}
+
+.scenery {
+    z-index: 1;
+}
+
+/* --- Base Positions --- */
+.building-1 { left: 15%; transform: translateX(-50%); }
+.building-2 { left: 50%; transform: translateX(-50%); }
+.building-3 { left: 85%; transform: translateX(-50%); }
+.scenery-1 { left: 30%; transform: translateX(-50%); }
+.scenery-2 { left: 70%; transform: translateX(-50%); }
+
+
+/* === LEVEL 1 STYLES === */
+/* Files must be in 'images' folder and named EXACTLY as in url() */
+.level-1 { background-image: url('images/sky_l1.png'); } /* sky_l1_smog_brown */
+.level-1 .city-visual { background-image: url('images/ground_l1.png'); } /* ground_l1_cracked_oil */
+.level-1 .building-1 { background-image: url('images/factory_L1_coal.png'); width: 120px; height: 130px; } /* factory_l1_rust_detailed_tanks - !! ADJUST SIZE !! */
+.level-1 .building-2 { background-image: url('images/factory_L1_smelter.png'); width: 115px; height: 125px; }   /* fractoy_l1_grey - !! ADJUST SIZE !! */
+.level-1 .building-3 { background-image: url('images/factory_L1_chemical.png'); width:110px; height:120px; }   /* factory_l1_rust_basic - !! ADJUST SIZE !! */
+.level-1 .scenery { background-image: url('images/C0Q2tA6.png'); width: 65px; height: 85px; }      /* tree_l1_dead - !! ADJUST SIZE !! */
+.level-1 .scenery-1 { display: none; }
+
+
+/* === LEVEL 2 STYLES === */
+.level-2 { background-image: url('images/sky_L2.jpeg'); } /* sky_l2_hazy_grey */
+.level-2 .city-visual { background-image: url('images/ground_L2.png'); } /* ground_l2_cracked_weeds */
+.level-2 .building-1 { background-image: url('images/factory_L2_gas_plant.png'); width: 95px; height: 105px; } /* factory_l2_complex_cleaner - !! ADJUST SIZE !! */
+.level-2 .building-2 { background-image: url('images/factory_L2_improved_coal.png'); width: 80px; height: 90px; }  /* factory_l2_grey_yellow_smokey - !! ADJUST SIZE !! */
+.level-2 .building-3 { background-image: url('images/factory_L2_recycling_basic.png'); width: 100px; height: 70px; } /* recycling_depot_l2 - !! ADJUST SIZE !! */
+.level-2 .scenery { background-image: url('images/tree_L2.png'); width: 50px; height: 60px; }     /* tree_l2_sparse (using basic round tree) - !! ADJUST SIZE !! */
+
+
+/* === LEVEL 3 STYLES === */
+.level-3 { background-image: url('images/sky_l3.png'); } /* sky_l3_pale_blue_clouds */
+.level-3 .city-visual { background-image: url('images/ground_L3.png'); } /* ground_l3_patchy_grass */
+.level-3 .building-1 { background-image: url('images/factory_L3_solar_assembly.png'); width: 85px; height: 95px; }  /* factory_l3_blue_yellow_steam - !! ADJUST SIZE !! */
+.level-3 .building-2 { background-image: url('images/factory_L3_wind_assembly.png'); width: 95px; height: 75px; }  /* factory_l3_wind_shed - !! ADJUST SIZE !! */
+.level-3 .building-3 { background-image: url('images/factory_L3_wind_assembly.png'); width: 90px; height: 100px; } /* Reuse L2 complex cleaner - !! ADJUST SIZE !! */
+.level-3 .scenery-1 { background-image: url('images/tree_L3.png'); width: 55px; height: 65px; }  /* tree_l3_basic_round (reuse L2 tree) - !! ADJUST SIZE !! */
+.level-3 .scenery-2 { background-image: url('images/tree_L3.png'); width: 55px; height: 65px; }  /* tree_l3_irregular - !! ADJUST SIZE !! */
+
+
+/* === LEVEL 4 STYLES === */
+.level-4 { background-image: url('images/sky_L4.jpeg'); } /* sky_l4_clear_blue_clouds */
+.level-4 .city-visual { background-image: url('images/ground_L4.png'); } /* ground_l4_full_grass */
+.level-4 .building-1 { background-image: url('images/factory_L4_advanced_lab.png'); width: 100px; height: 85px; } /* factory_l4_solar_roof - !! ADJUST SIZE !! */
+.level-4 .building-2 { background-image: url('images/factory_L4_geothermal.png'); width: 110px; height: 90px; } /* factory_l4_modern_green_roof - !! ADJUST SIZE !! */
+.level-4 .building-3 { background-image: url('images/factory_L4_hydro_control.png'); width: 90px; height: 70px; }   /* Reuse L3 wind shed - !! ADJUST SIZE !! */
+.level-4 .scenery { background-image: url('images/tree_L4.png'); width: 60px; height: 70px; }     /* tree_l4_lush_round - !! ADJUST SIZE !! */
+
+
+/* === LEVEL 5 STYLES === */
+.level-5 { background-image: url('images/sky_L5.jpeg'); } /* sky_l5_bright_blue_dynamic */
+.level-5 .city-visual { background-image: url('images/ground_L5.png'); } /* ground_l5_lush_grass_path */
+.level-5 .building-1 { background-image: url('images/factory_L5_algae_biofuel.png'); width: 95px; height: 95px; bottom: 10px; } /* factory_l5_fusion_core_dome - !! ADJUST SIZE !! */
+.level-5 .building-2 { background-image: url('images/factory_L5_carbon_capture.png'); width: 105px; height: 100px;} /* factory_l5_algae_tanks - !! ADJUST SIZE !! */
+.level-5 .building-3 { background-image: url('images/factory_L5_fusion_core.png'); width: 120px; height: 95px;} /* factory_l5_hydro_plant - !! ADJUST SIZE !! */
+/* Alternate L5 options commented out */
+/* .level-5 .building-3 { background-image: url('images/O7kF1Z5.png'); width: 80px; height: 110px; } */ /* factory_l5_vertical_farm - !! ADJUST SIZE !! */
+/* .level-5 .building-3 { background-image: url('images/V6rX4B2.png'); width: 120px; height: 95px; } */ /* factory_l5_hydro_plant_alt - !! ADJUST SIZE !! */
+.level-5 .scenery-1 { background-image: url('images/tree_L5.png'); width: 60px; height: 70px; }   /* tree_l5_stylized_plant - !! ADJUST SIZE !! */
+.level-5 .scenery-2 { background-image: url('images/tree_L4.png'); width: 65px; height: 75px; }   /* Reuse L4 tree - !! ADJUST SIZE !! */
+
+
+/* --- Upgrades Area --- */
+#upgrades-area {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+#upgrades-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.upgrade-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Styling WITH Icons (Example - uncomment and adapt if desired) --- */
+/* Uses short filenames from the grid */
+/*
+#scrubber1 { background-image: url('images/yA4mN76.png'); } /* icon_filter */
+#recycling1 { background-image: url('images/H7nS5A3.png'); } /* icon_recycle */
+#greenRoofs { background-image: url('images/T9rF2X1.png'); } /* icon_green_house */
+#smartGrid { background-image: url('images/N3vX1K7.png'); } /* icon_smart_grid */
+#advFiltration { background-image: url('images/W2zQ8O4.png'); } /* icon_water_drop */
+#solarSubsidies { background-image: url('images/I8bZ6W2.png'); } /* icon_solar_panel */
+#urbanForestry { background-image: url('images/E2oI0U5.png'); background-size: 20px 20px; } /* Example using L4 tree */
+
+
+.upgrade-button[id^="scrubber"],
+.upgrade-button[id^="recycling"],
+.upgrade-button[id^="greenRoofs"],
+.upgrade-button[id^="smartGrid"],
+.upgrade-button[id^="advFiltration"],
+.upgrade-button[id^="solarSubsidies"],
+.upgrade-button[id^="urbanForestry"] {
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 24px 24px; /* Default icon size */
+    padding-left: 45px;
+    text-align: left;
+}
+.upgrade-button[id^="scrubber"] span,
+.upgrade-button[id^="recycling"] span,
+.upgrade-button[id^="greenRoofs"] span,
+.upgrade-button[id^="smartGrid"] span,
+.upgrade-button[id^="advFiltration"] span,
+.upgrade-button[id^="solarSubsidies"] span,
+.upgrade-button[id^="urbanForestry"] span {
+    display: block;
+}
+
+*/
+/* --- End Icon Example --- */
+
+
+.upgrade-button:hover:not(:disabled) {
+    background-color: #45a049;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.upgrade-button:disabled {
+    background-color: #cccccc !important;
+    background-image: none !important;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.7;
+    box-shadow: none;
+    padding-left: 15px; /* Reset padding if icons were used */
+    text-align: center; /* Reset text align */
+}
+
+.upgrade-info {
+    font-size: 0.8em;
+    color: #eee;
+    display: block;
+    margin-top: 4px;
+}
+.upgrade-button:disabled .upgrade-info {
+    color: #777;
+}
+.upgrade-button span:first-child {
+    font-weight: bold;
+}
+
+
+#message-log {
+    margin-top: 15px;
+    min-height: 20px;
+    font-style: italic;
+    color: #333;
+    text-align: center;
+    background-color: rgba(248, 248, 248, 0.9);
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: opacity 0.5s ease;
+}
+
+/* --- Click Feedback Style --- */
+.click-feedback {
+    position: absolute;
+    color: #11ff11;
+    font-weight: bold;
+    font-size: 1.2em;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    transform: translateY(0);
+    z-index: 10;
+    text-shadow: 1px 1px 2px black, -1px -1px 2px black;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.click-feedback.fade-out {
+    opacity: 0;
+    transform: translateY(-40px);
+}

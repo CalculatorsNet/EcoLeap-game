@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Changed Title -->
+    <title>EcoCity: The Greenprint Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container" class="level-1">
+        <header>
+            <!-- Changed Heading -->
+            <h1>EcoCity</h1>
+            <div id="stats">
+                <span>Score: <span id="score-value">0</span>/100</span>
+                <span>Level: <span id="level-value">1</span></span>
+                <!-- Changed Currency Label -->
+                <span>Dollars: $<span id="dollars-value">50</span></span>
+            </div>
+        </header>
+
+        <div id="city-area">
+            <h2>Your City</h2>
+            <div class="city-visual">
+                <!-- Factory visuals will be styled by CSS based on level -->
+                <div class="factory building-1"></div>
+                <div class="factory building-2"></div>
+                <div class="factory building-3"></div>
+                <div class="scenery scenery-1"></div>
+                <div class="scenery scenery-2"></div>
+            </div>
+             <p id="level-description">Level 1: The Grimy Start. Lots of pollution.</p>
+        </div>
+
+        <div id="upgrades-area">
+            <h2>City Upgrades</h2>
+            <div id="upgrades-list">
+                <!-- Upgrades will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div id="message-log">
+             <!-- Messages like "Upgrade purchased!" will appear here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
